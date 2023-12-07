@@ -1,0 +1,11 @@
+#leaderboardTable {
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+}
+
+th,
+td {
+    border: 1px solid;
+    padding: 10px;
+}
