@@ -1,7 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`render PollCard click should be successful 1`] = `undefined`;
-
-exports[`render PollCard should be successful 1`] = `undefined`;
-
 exports[`render PollCard snapshot should be successful 1`] = `undefined`;

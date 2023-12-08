@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import NotFound from "./NotFound";
 import { MemoryRouter } from "react-router";
 

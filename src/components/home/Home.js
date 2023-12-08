@@ -2,33 +2,57 @@ import Nav from "../nav/Nav";
 import "./Home.css";
 import { connect } from "react-redux";
 import PollCard from "../pollcard/PollCard";
+import { useState } from "react";
 
 const Home = (props) => {
+  const [tab, setTabPage] = useState("unanswered");
+
   const { newQuestions, done } = props;
+
+  const handleTabToggle = (e) => {
+    const text = e.target.value;
+    console.log(text);
+    setTabPage(text);
+  };
 
   return (
     <div className="Home">
       <Nav />
-      <h1>New Questions</h1>
-      <ul style={{ display: "inline-flex" }}>
-        {newQuestions.map((question) => {
-          return (
-            <li key={question.id}>
-              <PollCard question={question} />
-            </li>
-          );
-        })}
-      </ul>
-      <h1>Done</h1>
-      <ul style={{ display: "inline-flex" }}>
-        {done.map((question) => {
-          return (
-            <li key={question.id}>
-              <PollCard question={question} />
-            </li>
-          );
-        })}
-      </ul>
+      <div>
+        <button onClick={handleTabToggle} value="unanswered">
+          Unanswered
+        </button>
+        <button onClick={handleTabToggle} value="answered">
+          Answered
+        </button>
+      </div>
+      {tab === "unanswered" ? (
+        <div>
+          <h1>Unanswered</h1>
+          <ul style={{ display: "inline-block" }}>
+            {newQuestions.map((question) => {
+              return (
+                <li key={question.id}>
+                  <PollCard question={question} />
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      ) : (
+        <div>
+          <h1>Answered</h1>
+          <ul style={{ display: "inline-block" }}>
+            {done.map((question) => {
+              return (
+                <li key={question.id}>
+                  <PollCard question={question} />
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      )}
     </div>
   );
 };

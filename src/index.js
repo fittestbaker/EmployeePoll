@@ -8,7 +8,6 @@ import store from "./store";
 import ReactDOM from "react-dom/client";
 
 const container = document.getElementById("root");
-debugger;
 const root = ReactDOM.createRoot(container);
 
 root.render(
